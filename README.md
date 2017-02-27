@@ -3,12 +3,12 @@
 Application wich gets installed on the Raspberry PI of the Smartfridge.
 
 The functionalities are:
--takes track of sensorechanges (door was opened)
--takes a picture of the inside of the fridge when the door was opened
--sends the picture to the webserver
--listens to the barcodescanner
--gets the productinformation of a barcode from the internet
--sends the gathered productinformation via push notification the the andorid application
+- takes track of sensorechanges (door was opened)
+- takes a picture of the inside of the fridge when the door was opened
+- sends the picture to the webserver
+- listens to the barcodescanner
+- gets the productinformation of a barcode from the internet
+- bsends the gathered productinformation via push notification the the andorid application
 
 # Installation
 
