@@ -128,7 +128,7 @@ public class PinController {
 		System.out.println("bild aufgenommen!");
 		
 		String currentDir = System.getProperty("user.dir");
-        Runtime.getRuntime().exec("sudo fswebcam -r 1280x720 -d /dev/video0 "+currentDir+"/fridge.jpg"); 
+        Runtime.getRuntime().exec("sudo fswebcam -r 1024x768 -d /dev/video0 "+currentDir+"/fridge.jpg"); 
         
        // Runtime.getRuntime().exec("sudo fswebcam -d /dev/video0  -S 1 -s brightness=60% -s Contrast=15%  -s Gamma=50%  -p YUYV -r 1280x720 --jpeg 80 -s Sharpness=40% -s Saturation=15% "+currentDir+"/fridge.jpg");  
 	   //sudo fswebcam -d /dev/video0  -S 1 -s brightness=60% -s Contrast=15%  -s Gamma=50%  -p YUYV -r 1280x720 --jpeg 80 -s Sharpness=40% -s Saturation=15% /Desktop/fridge.jpg

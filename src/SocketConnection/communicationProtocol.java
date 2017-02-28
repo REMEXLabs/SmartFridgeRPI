@@ -124,8 +124,9 @@ public class communicationProtocol {
 			    JsonObject  jobject = jelement.getAsJsonObject();
 			    int productID =  Integer.parseInt(jobject.get("productID").toString());
 			    int categorieID =  Integer.parseInt(jobject.get("categorieID").toString());	
+			    System.out.println("update");
 			    dbC.updateCategorieOfProductByID(productID,categorieID);
-			 return taskCode+"updated";
+			 return "";//taskCode+"updated";
 		 }
 		 if(taskCode.equals("015")){
 			 	JsonElement jelement = new JsonParser().parse(information);
@@ -139,7 +140,7 @@ public class communicationProtocol {
 			 JsonElement jelement = new JsonParser().parse(information);
 			 JsonObject  jobject = jelement.getAsJsonObject();
 			 String productName =  jobject.get("productName").toString();
-			 return taskCode+jAPI.searchOrCreateProduct(productName);
+			 return "";//taskCode+jAPI.searchOrCreateProduct(productName);
 		 }
 		 if(taskCode.equals("017")){
 			 return  taskCode+jAPI.getAllPhotos();

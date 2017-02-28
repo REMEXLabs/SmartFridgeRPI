@@ -190,11 +190,11 @@ public class DBClass {
 	
 	public void updateCategorieOfProductByID(int id, int categorieID) throws SQLException
 	{
-		Connection con = getDBConnection();
+		/*Connection con = getDBConnection();
 		Statement stmt = con.createStatement();
 		stmt.executeUpdate("UPDATE products SET categorie_id = "+categorieID+" WHERE id = "+id);
 		stmt.close();
-		con.close();
+		con.close();*/
 		pinC.positionIndicatorLed(categorieID);
 	}
 	
@@ -227,7 +227,7 @@ public class DBClass {
 	
 	public void storeProduct(Product prod) throws SQLException, ParseException{
 
-			
+			/*
 
 		Connection con = getDBConnection();
 		Statement stmt = con.createStatement();
@@ -240,8 +240,9 @@ public class DBClass {
 		stmt.close();
 		con.close();
 		//System.out.println("store");
+		
+		deleteDeletedItem(prod.getProductID());*/
 		pinC.positionIndicatorLed(Integer.parseInt(prod.getCategorie()));
-		deleteDeletedItem(prod.getProductID());
 		
 	}
 	
