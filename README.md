@@ -10,7 +10,7 @@ The functionalities are:
 - gets the product information of a barcode from the internet
 - sends the gathered product information via push notification to the Andorid application
 
-# Installation
+## Installation
 
 Java has to be installed:
 
@@ -61,3 +61,8 @@ If gksu has never been executed on the RPI, call the following command once in t
     gksu „sudo java – jar /home/pi/Desktop/FridgeServer.jar“
 
 Gksu will now ask you for root access, please confirm this.
+
+## Related Repositories
+
+* [SmartFridge](https://github.com/REMEXLabs/SmartFridge): Android app.
+* [SmartFridgeWebserver](https://github.com/REMEXLabs/SmartFridgeWebserver).
