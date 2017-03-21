@@ -60,7 +60,7 @@ public class communicationProtocol {
 	
 	
 	 public String processInput(String theInput) throws NumberFormatException, Exception {
-		//System.out.println("income: "+theInput);
+		System.out.println("income: "+theInput);
 		 String taskCode = "";
 		 if(theInput.length()>=3){
 			 taskCode  = theInput.substring(0,3);

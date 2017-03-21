@@ -17,7 +17,7 @@ public class Http {
 	// HTTP POST request
 	public void sendPost(String parameter) throws Exception {
 
-		String url = "http://192.168.0.49:8080/Webserver/rest/hello/";
+		String url = "http://localhost:8080/Webserver/rest/hello/";
 		URL obj = new URL(null, url, new sun.net.www.protocol.http.Handler());
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 

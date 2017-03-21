@@ -21,7 +21,8 @@ import database.DBClass;
 
 public class PinController {
 	
-	
+
+	long photoTimer = 0;
 	private static GpioPinDigitalOutput pinMeatAndFish;
 	private static GpioPinDigitalOutput pinOthers;
 	private static GpioPinDigitalOutput pinMilkAndEggs;
@@ -59,7 +60,10 @@ public class PinController {
                 if(event.getState()==PinState.HIGH){
                 	
                 	try {
-						TakeAndSavePicture();
+                		if(System.currentTimeMillis() >= photoTimer + 10000){
+                			photoTimer = System.currentTimeMillis();
+                			TakeAndSavePicture();
+                		}
 					} catch (IOException | SQLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -123,21 +127,29 @@ public class PinController {
 		//pinBarcodeScanner.toggle();
 	}
 	
+	int i= 0;
 	//TakeAndSavePicture
 	private void TakeAndSavePicture() throws IOException, SQLException{
 		System.out.println("bild aufgenommen!");
-		
+		i++;
+		System.out.println("i = "+i);
+		photoTimer = System.currentTimeMillis();
 		String currentDir = System.getProperty("user.dir");
-        Runtime.getRuntime().exec("sudo fswebcam -r 1024x768 -d /dev/video0 "+currentDir+"/fridge.jpg"); 
+        Runtime.getRuntime().exec("sudo fswebcam -r 1024x768 -d /dev/video0 /home/pi/Desktop/fridge.jpg"); 
         
        // Runtime.getRuntime().exec("sudo fswebcam -d /dev/video0  -S 1 -s brightness=60% -s Contrast=15%  -s Gamma=50%  -p YUYV -r 1280x720 --jpeg 80 -s Sharpness=40% -s Saturation=15% "+currentDir+"/fridge.jpg");  
 	   //sudo fswebcam -d /dev/video0  -S 1 -s brightness=60% -s Contrast=15%  -s Gamma=50%  -p YUYV -r 1280x720 --jpeg 80 -s Sharpness=40% -s Saturation=15% /Desktop/fridge.jpg
-        File file = new File("fridge.jpg");
-	    System.out.println("ok2");
+        File file = new File("/home/pi/Desktop/fridge.jpg");
+	    System.out.println("ok3");
         dbC.storePic(0, file);
+        System.out.println("ok4");
        // dbC.getPircturesFromDB();
         try {
+        	System.out.println("ok5");
 			http.sendImage("031"+jAPI.getAllPhotos());
+			
+			//System.out.println("031"+jAPI.getAllPhotos());
+			System.out.println("ok6");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

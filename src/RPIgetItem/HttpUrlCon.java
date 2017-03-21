@@ -83,8 +83,10 @@ public class HttpUrlCon {
 
 			Client client = Client.create();
 
-			WebResource webResource = client
-			   .resource("http://176.28.55.242:8080/Webserver/rest/hello/sendPics");
+			//WebResource webResource = client.resource("http://176.28.55.242:8080/Webserver/rest/hello/sendPics");
+			
+
+			WebResource webResource = client.resource("http://localhost:8080/Webserver/rest/hello/sendPics");
 
 
 
