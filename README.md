@@ -3,7 +3,7 @@
 Application wich gets installed on the Raspberry PI of the Smartfridge.
 
 The functionalities are:
-- tracks of sensor changes (e.g. door was opened)
+- keeps track of sensor changes (e.g. door was opened)
 - takes a picture of the inside of the fridge when the door was opened
 - sends the picture to the webserver
 - listens to the barcode scanner
